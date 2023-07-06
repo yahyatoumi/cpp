@@ -1,43 +1,9 @@
 #include <iostream>
 #include "PhoneBook.class.hpp"
 
-void Contact::createConatct(std::string fname, std::string lname, std::string nickname, std::string number, std::string darkestSecret)
-{
-	this->fname = fname;
-	this->lname = lname;
-	this->nickname = nickname;
-	this->number = number;
-	this->darkestSecret = darkestSecret;
-}
 
-void Contact::displayContact() const
-{
-	if (!this->fname.length())
-		return;
-	if (this->fname.length() < 11)
-		std::cout << "|" << std::setw(10) << this->fname << "|";
-	else
-		std::cout << "|" << this->fname.substr(0, 9) << ".|";
-	if (this->lname.length() < 11)
-		std::cout << std::setw(10) << this->lname << "|";
-	else
-		std::cout << this->lname.substr(0, 9) << ".|";
-	if (this->nickname.length() < 11)
-		std::cout << std::setw(10) << this->nickname << "|";
-	else
-		std::cout << this->nickname.substr(0, 9) << ".|";
-	if (this->number.length() < 11)
-		std::cout << std::setw(10) << this->number << "|";
-	else
-		std::cout << this->number.substr(0, 9) << ".|";
-	if (this->darkestSecret.length() < 11)
-		std::cout << std::setw(10) << this->darkestSecret << "|";
-	else
-		std::cout << this->darkestSecret.substr(0, 9) << ".|";
-	std::cout << std::endl;
-}
 
-void PhoneBook::addContact(Contact &contact)
+void PhoneBook::addContact(Contact contact)
 {
 	if (this->nOfContacts < 8)
 	{
@@ -52,14 +18,7 @@ void PhoneBook::addContact(Contact &contact)
 	}
 }
 
-void Contact::displayDetails() const
-{
-	std::cout << this->fname << std::endl;
-	std::cout << this->lname << std::endl;
-	std::cout << this->nickname << std::endl;
-	std::cout << this->number << std::endl;
-	std::cout << this->darkestSecret << std::endl;
-}
+
 
 void PhoneBook::displayContacts() const
 {
@@ -69,7 +28,15 @@ void PhoneBook::displayContacts() const
 		std::cout << "list is empty!!" << std::endl;
 		return;
 	}
-	for (int i = 0; i < 8; i++){
+	for (int i = 0; i < 63; i++)
+		std::cout << "-";
+	std::cout << std::endl;
+	std::cout << " index |first name| last name|  nickname|    number|    secret|" << std::endl;
+	for (int i = 0; i < 63; i++)
+		std::cout << "-";
+	std::cout << std::endl;
+	for (int i = 0; i < this->nOfContacts; i++){
+		std::cout << "   " << this->nOfContacts << "   ";
 		contacts[i].displayContact();
 	}
 	std::cout << "index : ";
@@ -80,7 +47,7 @@ void PhoneBook::displayContacts() const
 
 void PhoneBook::displayContactDetails(std::string index) const
 {
-	int i = atoi(index.c_str());
+	int i = std::atoi(index.c_str());
 	if (i < 1 || i > 8 || index.length() > 1)
 	{
 		std::cout << "the index Must Be a number < 8 && > 0!!" << std::endl;
@@ -96,7 +63,7 @@ void PhoneBook::displayContactDetails(std::string index) const
 
 int PhoneBook::isdigits(std::string str)
 {
-	for (int i = 0; i < str.length(); i++)
+	for (unsigned long i = 0; (unsigned long)i < str.length(); i++)
 	{
 		if (!std::isdigit(str[i]))
 			return 0;
