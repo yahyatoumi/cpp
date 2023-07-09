@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/06 16:49:31 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/07 19:01:18 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "PhoneBook.class.hpp"
-
-
 
 void PhoneBook::addContact(Contact contact)
 {
@@ -17,8 +27,6 @@ void PhoneBook::addContact(Contact contact)
 		this->contacts[7] = contact;
 	}
 }
-
-
 
 void PhoneBook::displayContacts() const
 {
@@ -36,7 +44,7 @@ void PhoneBook::displayContacts() const
 		std::cout << "-";
 	std::cout << std::endl;
 	for (int i = 0; i < this->nOfContacts; i++){
-		std::cout << "   " << this->nOfContacts << "   ";
+		std::cout << "   " << i + 1 << "   ";
 		contacts[i].displayContact();
 	}
 	std::cout << "index : ";
@@ -63,7 +71,7 @@ void PhoneBook::displayContactDetails(std::string index) const
 
 int PhoneBook::isdigits(std::string str)
 {
-	for (unsigned long i = 0; (unsigned long)i < str.length(); i++)
+	for (int i = 0; (unsigned long)i < str.length(); i++)
 	{
 		if (!std::isdigit(str[i]))
 			return 0;

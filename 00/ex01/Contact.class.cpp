@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/06 16:49:20 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/06 16:49:21 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.class.hpp"
 
 void Contact::createConatct(std::string fname, std::string lname, std::string nickname, std::string number, std::string darkestSecret)

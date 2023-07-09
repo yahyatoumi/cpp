@@ -5,15 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/06 16:49:29 by ytoumi            #+#    #+#              #
-#    Updated: 2023/07/07 18:54:14 by ytoumi           ###   ########.fr        #
+#    Created: 2023/07/09 14:09:04 by ytoumi            #+#    #+#              #
+#    Updated: 2023/07/09 14:09:05 by ytoumi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	phone
+NAME	=	program
 
-SRCS	=	main.cpp PhoneBook.class.cpp Contact.class.cpp
-HEADERS	=	Contact.class.hpp PhoneBook.class.hpp
+SRCS	=	main.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
@@ -24,9 +23,6 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-
-%.o : %.cpp %.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 			rm -rf $(OBJS)
