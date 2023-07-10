@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/10 11:10:59 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/10 11:11:00 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
 void Harl::debug(void)
@@ -28,7 +40,6 @@ void Harl::complain(std::string level)
 		if (level == options[i])
 			index = i;
 	}
-	printf("level == %s index == %i\n", level.c_str(), index);
 	switch (index)
 	{
 	case 0:
