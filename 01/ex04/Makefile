@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/09 14:53:35 by ytoumi            #+#    #+#              #
-#    Updated: 2023/07/09 20:41:33 by ytoumi           ###   ########.fr        #
+#    Created: 2023/07/09 22:09:46 by ytoumi            #+#    #+#              #
+#    Updated: 2023/07/09 22:10:03 by ytoumi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	fight
 
-SRCS	=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+NAME	=	replace
+
+SRCS	=	main.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
@@ -23,9 +24,6 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-
-%.o : %.cpp %.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 			rm -rf $(OBJS)

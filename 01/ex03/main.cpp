@@ -1,11 +1,6 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-void wr(int &b)
-{
-	std::cout << b << b << std::endl;
-}
-
 int main()
 {
 	{
@@ -18,7 +13,6 @@ int main()
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");
-		std::cout << &club << " this is the address of the club" << std::endl;
 		jim.setWeapon(club);
 		jim.attack();
 		club.setType("some other type of club");

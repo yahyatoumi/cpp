@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/09 14:53:35 by ytoumi            #+#    #+#              #
-#    Updated: 2023/07/09 20:41:33 by ytoumi           ###   ########.fr        #
+#    Created: 2023/07/10 10:38:29 by ytoumi            #+#    #+#              #
+#    Updated: 2023/07/10 10:41:47 by ytoumi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	fight
+NAME	=	harl
 
-SRCS	=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS	=	main.cpp Harl.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
