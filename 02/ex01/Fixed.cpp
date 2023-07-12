@@ -8,7 +8,6 @@ Fixed::Fixed(void) : value(0)
 
 int Fixed::getRawBits(void) const
 {
-    printf("value == %i\n", this->value);
     return this->value;
 }
 
@@ -54,6 +53,5 @@ int Fixed::toInt(void) const{
 
 std::ostream &operator<<(std::ostream &o, Fixed const &fixed){
     o << static_cast<float>(fixed.getRawBits());
-    printf("float == %f\n", static_cast<float>(fixed.getRawBits()));
     return o;
 }
