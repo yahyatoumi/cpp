@@ -51,7 +51,31 @@ int Fixed::toInt(void) const{
     return this->value >> this->farctional_bits;
 }
 
+int Fixed::getFractional(void) const{
+    return this->farctional_bits;
+}
+
 std::ostream &operator<<(std::ostream &o, Fixed const &fixed){
-    o << static_cast<float>(fixed.getRawBits());
+    int integer;
+    int fractional;
+    int allZeros = 1;
+    std::string frac = "";
+
+    integer = fixed.getRawBits() >> fixed.getFractional();
+    fractional = fixed.getRawBits() % (1 << fixed.getFractional());
+    o << integer;
+    for (int i = 0; i < fixed.getFractional(); ++i) {
+        if (!fractional)
+            break;
+        fractional *= 10;
+        frac += fractional / (1 << fixed.getFractional()) + 48;
+        if (fractional / (1 << fixed.getFractional()))
+            allZeros = 0;
+        fractional %= 1 << fixed.getFractional();
+    }
+    if (allZeros)
+        return o;
+    o << ".";
+    o << frac;
     return o;
 }
