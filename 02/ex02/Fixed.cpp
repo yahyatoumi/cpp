@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/14 13:31:52 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/14 13:31:53 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <cmath>
 
@@ -124,26 +136,26 @@ Fixed Fixed::operator/(Fixed const &right) const
     return Fixed(right.value / this->value);
 }
 
-Fixed &Fixed::operator++(int)
+Fixed &Fixed::operator++()
 {
     this->value += 1;
     return *this;
 }
 
-Fixed Fixed::operator++()
+Fixed Fixed::operator++(int)
 {
     Fixed _old(*this);
     this->value += 1;
     return (_old);
 }
 
-Fixed &Fixed::operator--(int)
+Fixed &Fixed::operator--()
 {
     this->value -= 1;
     return *this;
 }
 
-Fixed Fixed::operator--()
+Fixed Fixed::operator--(int)
 {
     Fixed _old(*this);
     this->value--;
