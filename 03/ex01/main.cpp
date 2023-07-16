@@ -1,8 +1,9 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-    ClapTrap c1, c2;
+    ClapTrap c1("c1"), c2;
 
     c1.setName("CP1");
     c2.setName("CP2");
@@ -16,4 +17,9 @@ int main()
     std::cout << c2.getName() << " has " << c2.getEnergyPointes() << " hit pointes" << std::endl;
     std::cout << c1.getName() << " has " << c1.getAttackDamage() << " hit pointes" << std::endl;
     std::cout << c2.getName() << " has " << c2.getAttackDamage() << " hit pointes" << std::endl;
+    ScavTrap s1("ST1");
+    std::cout << s1.getName() << " has " << s1.getHitPointes() << " hit pointes" << std::endl;
+    std::cout << s1.getName() << " has " << s1.getEnergyPointes() << " energy pointes" << std::endl;
+    std::cout << s1.getName() << " has " << s1.getAttackDamage() << " attack damage pointes" << std::endl;
+    s1.guardGate();
 }

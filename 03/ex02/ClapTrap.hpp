@@ -13,6 +13,7 @@ private:
 
 public:
     ClapTrap(void);
+    ClapTrap(std::string name);
     ClapTrap(ClapTrap const &_old);
     ~ClapTrap(void);
     ClapTrap & operator=(ClapTrap &_new);
