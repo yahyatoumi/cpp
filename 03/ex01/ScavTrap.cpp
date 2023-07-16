@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/16 22:27:38 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/16 22:27:39 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void)
@@ -15,9 +27,26 @@ ScavTrap::ScavTrap(std::string name)
     this->setName(name);
     std::cout << "ScavTrap constructor WITH NAME called!!" << std::endl;
 }
+ScavTrap::ScavTrap(ScavTrap &toCopy)
+{
+    this->setHitPointes(toCopy.getHitPointes());
+    this->setEnergyPointes(toCopy.getEnergyPointes());
+    this->setAttackDamage(toCopy.getAttackDamage());
+    std::cout << "ScavTrap COPY constructor called!!" << std::endl;
+}
 ScavTrap::~ScavTrap(void)
 {
     std::cout << "ScavTrap DESTRUCTOR constructor called!!" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap &_new)
+{
+    std::cout << "ScavTrap assignment operator called!!" << std::endl;
+    this->setHitPointes(_new.getHitPointes());
+    this->setEnergyPointes(_new.getEnergyPointes());
+    this->setAttackDamage(_new.getAttackDamage());
+    this->setName(_new.getName());
+    return *this;
 }
 
 void ScavTrap::guardGate()

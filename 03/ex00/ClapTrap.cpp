@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/16 22:27:04 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/16 22:27:05 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 std::string ClapTrap::getName(void) const
@@ -49,7 +61,11 @@ ClapTrap::~ClapTrap(void)
 }
 ClapTrap &ClapTrap::operator=(ClapTrap &_new)
 {
-    this->name = _new.getName();
+    std::cout << "ClapTrap COPY constructor called!!" << std::endl;
+    this->hitPointes = _new.hitPointes;
+    this->energyPoints = _new.energyPoints;
+    this->attackDamage = _new.attackDamage;
+    this->name = _new.name;
     return *this;
 }
 
