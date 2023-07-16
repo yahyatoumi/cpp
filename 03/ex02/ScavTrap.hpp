@@ -11,5 +11,5 @@ public:
     ~ScavTrap(void);
     void guardGate();
 };
-
+ 
 #endif
