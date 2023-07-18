@@ -12,8 +12,6 @@ int main()
         animals[i] = new Dog();
         animals[i + 2] = new Cat();
     }
-    animals2[0] = animals[0];
-    animals2[1] = animals[2];
 
     for (int i = 0; i < 4; i++)
     {
