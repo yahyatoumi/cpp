@@ -6,7 +6,7 @@
 /*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 22:27:58 by ytoumi            #+#    #+#             */
-/*   Updated: 2023/07/16 22:27:59 by ytoumi           ###   ########.fr       */
+/*   Updated: 2023/07/16 23:29:14 by ytoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ public:
     FragTrap &operator=(FragTrap &_new);
     void highFivesGuys(void);
 };
- 
+
 #endif
