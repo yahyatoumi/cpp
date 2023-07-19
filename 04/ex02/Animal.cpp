@@ -19,11 +19,6 @@ Animal &Animal::operator=(Animal const &_new)
     return *this;
 }
 
-void Animal::makeSound() const
-{
-    std::cout << "The Animal [" << this->type << "] is making sound" << std::endl;
-}
-
 std::string Animal::getType(void) const
 {
     return this->type;
