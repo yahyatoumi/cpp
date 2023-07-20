@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/20 21:36:28 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/21 00:12:20 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Ice.hpp"
 
 Ice::Ice(void)
@@ -18,10 +30,8 @@ Ice::Ice(std::string const &type)
 }
 
 Ice &Ice::operator=(Ice const &_new){
-}
-
-void Ice::use(ICharacter &target)
-{
+    _new.getType();
+    return *this;
 }
 
 Ice *Ice::clone() const
@@ -31,5 +41,7 @@ Ice *Ice::clone() const
 
 void Ice::use(ICharacter &target)
 {
-    std::cout << "* heals " <<  target.getName() << " ’s wounds *" << std::endl;
+    std::cout << "* shoots an ice bolt at " <<  target.getName() << " *" << std::endl;
 }
+
+

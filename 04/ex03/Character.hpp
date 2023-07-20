@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/20 21:36:21 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/20 21:44:24 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHARACTERCLASS
 #define CHARACTERCLASS
 
 #include "ICharacter.hpp"
+class AMateria;
 
 class Character : public ICharacter{
 

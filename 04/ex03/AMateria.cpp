@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/20 21:36:16 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/20 23:50:55 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AMateria.hpp"
 
 AMateria::AMateria(void)
@@ -21,5 +33,5 @@ std::string const &AMateria::getType() const
 } // Returns the materia type
 
 void AMateria::use(ICharacter &target){
-    
+    (void)target;
 }

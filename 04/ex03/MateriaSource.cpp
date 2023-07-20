@@ -1,11 +1,66 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/20 21:36:48 by ytoumi            #+#    #+#             */
+/*   Updated: 2023/07/21 00:24:41 by ytoumi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 MateriaSource::~MateriaSource()
 {
+    for (int i = 0; i < 4; i++){
+        if (this->materias[i])
+            delete this->materias[i];
+    }
 }
-void MateriaSource::learnMateria(AMateria *)
+MateriaSource::MateriaSource()
 {
+    for(int i = 0; i < 4; i++){
+        this->materias[i] = NULL;
+    }
+}
+MateriaSource::MateriaSource(MateriaSource &toCopy)
+{
+    for (int i = 0; i < 4; i++){
+        if (toCopy.materias[i])
+            this->materias[i] = toCopy.materias[i]->clone();
+    }
+}
+MateriaSource &MateriaSource::operator=(MateriaSource &_new)
+{
+    for (int i = 0; i < 4; i++){
+        if (_new.materias[i])
+            this->materias[i] = _new.materias[i]->clone();
+    }
+    return *this;
+}
+void MateriaSource::learnMateria(AMateria *materia)
+{
+    if (this->materias[3])
+        return ;
+    for (int i = 0; i < 4; i++){
+        if (this->materias[i] == NULL){
+            this->materias[i] = materia;
+            return ;
+        }
+    }
 }
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
+    int latest = -1;
+    for (int i = 0; i < 4; i++){
+        if (this->materias[i] && this->materias[i]->getType() == type)
+            latest = i;
+    }
+    if (latest != -1)
+        return this->materias[latest];
+    return NULL;
 }
