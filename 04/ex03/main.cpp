@@ -14,7 +14,6 @@
 #include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-#include <stdlib.h>
 
 // void ff(){
 //     system("leaks out");
