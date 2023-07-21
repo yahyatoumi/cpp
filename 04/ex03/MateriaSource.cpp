@@ -6,7 +6,7 @@
 /*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:36:48 by ytoumi            #+#    #+#             */
-/*   Updated: 2023/07/21 00:24:41 by ytoumi           ###   ########.fr       */
+/*   Updated: 2023/07/21 01:23:21 by ytoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ MateriaSource::MateriaSource()
         this->materias[i] = NULL;
     }
 }
-MateriaSource::MateriaSource(MateriaSource &toCopy)
+MateriaSource::MateriaSource(const MateriaSource &toCopy)
 {
     for (int i = 0; i < 4; i++){
         if (toCopy.materias[i])
