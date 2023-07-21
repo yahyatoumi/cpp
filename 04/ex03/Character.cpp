@@ -22,6 +22,8 @@ Character::Character(void)
 
 Character::Character(Character &toCopy)
 {
+    if (this == &toCopy)
+        return ;
     for (int i = 0; i < 4; i++)
     {
         if (toCopy.materias[i])
@@ -37,6 +39,8 @@ Character::~Character(void)
 
 Character &Character::operator=(Character &_new)
 {
+    if (this == &_new)
+        return *this;
     for (int i = 0; i < 4; i++)
     {
         if (_new.materias[i])
@@ -54,6 +58,8 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
+    if (!m)
+        return ;
     if (this->materias[3])
         return;
     for (int i = 0; i < 4; i++)

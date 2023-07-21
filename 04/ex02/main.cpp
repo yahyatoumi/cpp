@@ -2,13 +2,13 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-void ff(){
-    system("leaks out");
-}
+// void ff(){
+//     system("leaks out");
+// }
 
 int main()
 {
-    atexit(ff);
+    // atexit(ff);
     Animal *animals[4];
 
     for (int i = 0; i < 2; i++)

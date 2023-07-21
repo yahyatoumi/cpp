@@ -16,7 +16,7 @@ Ice::Ice(void)
 {
     this->type = "ice";
 }
-Ice::Ice(Ice &toCopy)
+Ice::Ice(Ice &toCopy) : AMateria(toCopy)
 {
     this->type = toCopy.type;
 }

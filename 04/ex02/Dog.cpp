@@ -6,7 +6,7 @@ Dog::Dog(void)
     this->brain = new Brain();
     std::cout << "Dog DEFAULT constructor called" << std::endl;
 }
-Dog::Dog(Dog &toCopy)
+Dog::Dog(Dog &toCopy) : Animal(toCopy)
 {
     this->type = toCopy.type;
     this->brain = new Brain(*toCopy.brain);
@@ -20,6 +20,8 @@ Dog::~Dog(void)
 }
 Dog &Dog::operator=(Dog const &_new)
 {
+    if (this == &_new)
+        return *this;
     this->type = _new.type;
     if (this->brain)
         delete this->brain;

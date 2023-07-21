@@ -13,6 +13,7 @@
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include <stdio.h>
 
 MateriaSource::~MateriaSource()
 {
@@ -29,6 +30,8 @@ MateriaSource::MateriaSource()
 }
 MateriaSource::MateriaSource(const MateriaSource &toCopy)
 {
+    if (this == &toCopy)
+        return ;
     for (int i = 0; i < 4; i++){
         if (toCopy.materias[i])
             this->materias[i] = toCopy.materias[i]->clone();
@@ -36,9 +39,17 @@ MateriaSource::MateriaSource(const MateriaSource &toCopy)
 }
 MateriaSource &MateriaSource::operator=(MateriaSource &_new)
 {
+    if (this == &_new)
+        return *this;
     for (int i = 0; i < 4; i++){
+        if (this->materias[i])
+            delete this->materias[i];
         if (_new.materias[i])
+        {
             this->materias[i] = _new.materias[i]->clone();
+        }
+        else
+            this->materias[i] = NULL;
     }
     return *this;
 }

@@ -30,7 +30,7 @@ AMateria::AMateria(std::string const &type)
 std::string const &AMateria::getType() const
 {
     return this->type;
-} // Returns the materia type
+}
 
 void AMateria::use(ICharacter &target){
     (void)target;

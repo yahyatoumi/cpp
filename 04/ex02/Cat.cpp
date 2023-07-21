@@ -6,7 +6,7 @@ Cat::Cat(void)
     this->brain = new Brain();
     std::cout << "Cat DEFAULT constructor called" << std::endl;
 }
-Cat::Cat(Cat &toCopy)
+Cat::Cat(Cat &toCopy) : Animal(toCopy)
 {
     this->brain = new Brain(*toCopy.brain);
     this->type = toCopy.type;
@@ -19,6 +19,8 @@ Cat::~Cat(void)
 }
 Cat &Cat::operator=(Cat const &_new)
 {
+    if (this == &_new)
+        return *this;
     this->type = _new.type;
     if (this->brain)
         delete this->brain;

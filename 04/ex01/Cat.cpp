@@ -19,6 +19,8 @@ Cat::~Cat(void)
 }
 Cat &Cat::operator=(Cat const &_new)
 {
+    if (this == &_new)
+        return *this;
     this->type = _new.type;
     if (this->brain)
         delete this->brain;

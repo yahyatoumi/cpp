@@ -16,7 +16,7 @@ Cure::Cure(void)
 {
     this->type = "cure";
 }
-Cure::Cure(Cure &toCopy)
+Cure::Cure(Cure &toCopy) : AMateria(toCopy)
 {
     this->type = toCopy.type;
 }

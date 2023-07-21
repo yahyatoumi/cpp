@@ -20,6 +20,8 @@ Dog::~Dog(void)
 }
 Dog &Dog::operator=(Dog const &_new)
 {
+    if (this == &_new)
+        return *this;
     this->type = _new.type;
     if (this->brain)
         delete this->brain;
