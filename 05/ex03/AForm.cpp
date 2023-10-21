@@ -50,7 +50,7 @@ void AForm::setSigned_()
     this->signed_ = true;
 }
 
-void AForm::execute(Bureaucrat const & executor) const
+void AForm::execute(Bureaucrat const &executor) const
 {
     std::string gradeerr = executor.getName() + " can't execute " + this->name + " form";
     std::string notsigned = this->name + " is not signed to execute";

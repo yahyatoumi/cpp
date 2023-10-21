@@ -6,7 +6,7 @@
 /*   By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 20:02:17 by ytoumi            #+#    #+#             */
-/*   Updated: 2023/10/19 19:42:33 by ytoumi           ###   ########.fr       */
+/*   Updated: 2023/10/21 21:21:49 by ytoumi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,15 @@ public:
     void decrement();
     void signForm(Form &form);
     ~Bureaucrat();
+
+class GradeTooHighException : public std::exception{
+public:
+    const char* what() const throw();
+};
+class GradeTooLowException : public std::exception{
+public:
+    const char* what() const throw();
+};
 };
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &obj);

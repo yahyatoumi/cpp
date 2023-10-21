@@ -1,17 +1,17 @@
-#ifndef SHRUBBERYCREATIONFORM
-#define SHRUBBERYCREATIONFORM
+#ifndef PRESIDENTIALPARDONFORM
+#define PRESIDENTIALPARDONFORM
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 class AForm;
 class Bureaucrat;
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 private:
     std::string target;
 public:
-    ShrubberyCreationForm(std::string target);
+    PresidentialPardonForm(std::string target);
     void beSigned(Bureaucrat &b);
 };
 

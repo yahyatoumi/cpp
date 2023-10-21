@@ -6,13 +6,13 @@
 #    By: ytoumi <ytoumi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 20:00:06 by ytoumi            #+#    #+#              #
-#    Updated: 2023/10/20 21:56:22 by ytoumi           ###   ########.fr        #
+#    Updated: 2023/10/21 22:25:53 by ytoumi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	out
 
-SRCS	=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS	=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 

@@ -5,11 +5,9 @@ int main()
 {
     try
     {
-        Bureaucrat b("yahya", 149);
-        b.decrement();
-        b.decrement();
-        b.decrement();
-        std::cout << b << std::endl;
+        Bureaucrat b("yahya", 150);
+        Bureaucrat c = b;
+        std::cout << c << std::endl;
     }catch(std::exception &e)
     {
         std::cout << e.what() << std::endl;

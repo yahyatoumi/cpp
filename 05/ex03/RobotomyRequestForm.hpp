@@ -1,17 +1,17 @@
-#ifndef SHRUBBERYCREATIONFORM
-#define SHRUBBERYCREATIONFORM
+#ifndef ROBOTOMYREQUESTFORM
+#define ROBOTOMYREQUESTFORM
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 class AForm;
 class Bureaucrat;
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 private:
     std::string target;
 public:
-    ShrubberyCreationForm(std::string target);
+    RobotomyRequestForm(std::string target);
     void beSigned(Bureaucrat &b);
 };
 
