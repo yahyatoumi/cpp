@@ -11,7 +11,7 @@ void PresidentialPardonForm::beSigned(Bureaucrat &b)
     if (b.getGrade() <= this->getGradeToSign())
         this->setSigned_();
     else
-        throw AForm::GradeTooHighException();
+        throw PresidentialPardonForm::GradeTooHighException();
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
@@ -19,7 +19,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
     std::string gradeerr = executor.getName() + " can't execute " + this->getName() + " form";
     std::string notsigned = this->getName() + " is not signed to execute";
     if (executor.getGrade() > this->getGradeToExecute())
-        throw std::logic_error(gradeerr);
+        throw PresidentialPardonForm::GradeTooHighException();
     if (!this->getSigned_())
         throw std::logic_error(notsigned);
     std::cout << "the form " << this->getName() << " has been executed by " << executor.getName() << std::endl;

@@ -15,7 +15,7 @@ void RobotomyRequestForm::beSigned(Bureaucrat &b)
     else
     {
         std::cout << "robotomy failed" << std::endl;
-        throw AForm::GradeTooHighException();
+        throw RobotomyRequestForm::GradeTooHighException();
     }
 }
 
@@ -24,7 +24,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
     std::string gradeerr = executor.getName() + " can't execute " + this->getName() + " form";
     std::string notsigned = this->getName() + " is not signed to execute";
     if (executor.getGrade() > this->getGradeToExecute())
-        throw std::logic_error(gradeerr);
+        throw RobotomyRequestForm::GradeTooHighException();
     if (!this->getSigned_())
         throw std::logic_error(notsigned);
     std::cout << "yoyoyoyoyo noise noise noise (Robotomyform making noises...)" << std::endl;
