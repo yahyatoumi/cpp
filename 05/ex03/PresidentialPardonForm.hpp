@@ -13,6 +13,7 @@ private:
 public:
     PresidentialPardonForm(std::string target);
     void beSigned(Bureaucrat &b);
+    void execute(Bureaucrat const & executor) const;
 };
 
 #endif

@@ -16,6 +16,9 @@ int main()
         form->beSigned(b);
         form2->beSigned(b);
         form3->beSigned(b);
+        form->execute(b);
+        form2->execute(b);
+        form3->execute(b);
         // std::cout << f << std::endl;
         // f.beSigned(b);
     }catch(std::exception &e)

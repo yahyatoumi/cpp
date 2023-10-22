@@ -2,12 +2,12 @@
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return "gradetoooohigh!!";
+    return "bureaucrat gradetoooohigh!!";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return "gradetoooolow!!";
+    return "bureaucrat gradetoooolow!!";
 }
 
 void Bureaucrat::increment()
@@ -73,5 +73,5 @@ void Bureaucrat::signForm(Form &form)
     if (this->getGrade() <= form.getGradeToSign())
         std::cout << this->name << " signed " << form.getName() << std::endl;
     else
-        std::cout << this->name << " couldn’t sign " << form.getName() << std::endl;
+        std::cout << this->name << " couldn’t sign " << form.getName() << "because his grade is low" << std::endl;
 }

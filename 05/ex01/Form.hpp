@@ -19,6 +19,14 @@ public:
     int getGradeToExecute() const;
     bool getSigned_() const;
     void beSigned(Bureaucrat &b);
+class GradeTooHighException : public std::exception{
+public:
+    const char* what() const throw();
+};
+class GradeTooLowException : public std::exception{
+public:
+    const char* what() const throw();
+};
 };
 
 std::ostream &operator<<(std::ostream &o, Form const &obj);

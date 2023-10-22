@@ -20,7 +20,15 @@ public:
     bool getSigned_() const;
     void setSigned_();
     virtual void beSigned(Bureaucrat &b) = 0;
-    void execute(Bureaucrat const & executor) const;
+    virtual void execute(Bureaucrat const & executor) const;
+class GradeTooHighException : public std::exception{
+public:
+    const char* what() const throw();
+};
+class GradeTooLowException : public std::exception{
+public:
+    const char* what() const throw();
+};
 };
 
 std::ostream &operator<<(std::ostream &o, AForm const &obj);

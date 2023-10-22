@@ -1,6 +1,16 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
+const char *AForm::GradeTooHighException::what() const throw()
+{
+    return " form gradetoooohigh!!";
+}
+
+const char *AForm::GradeTooLowException::what() const throw()
+{
+    return "form gradetoooolow!!";
+}
+
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
     if (this->gradeToSign < 1 || this->gradeToExecute < 1)
@@ -50,7 +60,7 @@ void AForm::setSigned_()
     this->signed_ = true;
 }
 
-void AForm::execute(Bureaucrat const & executor) const
+void AForm::execute(Bureaucrat const &executor) const
 {
     std::string gradeerr = executor.getName() + " can't execute " + this->name + " form";
     std::string notsigned = this->name + " is not signed to execute";
@@ -58,5 +68,5 @@ void AForm::execute(Bureaucrat const & executor) const
         throw std::logic_error(gradeerr);
     if (!this->signed_)
         throw std::logic_error(notsigned);
-    std::cout << "the form " << this->name << " has been signed by " << executor.getName() << std::endl;
+    std::cout << "the form " << this->name << " has been executed by " << executor.getName() << std::endl;
 }

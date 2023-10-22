@@ -4,6 +4,22 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+Intern::Intern()
+{
+}
+Intern::Intern(Intern &toCopy)
+{
+    (void)toCopy;
+}
+Intern::~Intern()
+{
+}
+Intern &Intern::operator=(Intern &toCopy)
+{
+    (void)toCopy;
+    return *this;
+}
+
 int convert_to_int(std::string &st)
 {
 
@@ -20,19 +36,19 @@ AForm *Intern::makeForm(std::string name, std::string target)
     {
     case 0:
         formCreated = new ShrubberyCreationForm(target);
+        std::cout << "Intern creates shrubbery creation form" << std::endl;
         break;
     case 1:
         formCreated = new RobotomyRequestForm(target);
+        std::cout << "Intern creates robotomy request form" << std::endl;
         break;
     case 2:
         formCreated = new PresidentialPardonForm(target);
-        break;
-    case 3:
-        std::cout << "error: form name is not correct!!" << std::endl;
-        return NULL;
+        std::cout << "Intern creates presidential pardon form" << std::endl;
         break;
     default:
-        std::cout << "Intern creates shrubbery creation form" << std::endl;
+        std::cout << "error: form name is not correct!!" << std::endl;
+        throw std::logic_error("form name is not correct!!");
     }
     return formCreated;
 }
