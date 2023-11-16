@@ -74,6 +74,7 @@
 		"set": "cpp",
 		"span": "cpp",
 		"list": "cpp",
-		"__cxx_version": "cpp"
+		"__cxx_version": "cpp",
+		"map": "cpp"
 	}
 }
